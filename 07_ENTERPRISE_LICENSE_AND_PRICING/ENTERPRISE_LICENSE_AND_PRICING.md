@@ -1,0 +1,25 @@
+# Enterprise License and Pricing — EEGLAB
+
+**Company:** Anticloud FZ LLE
+**Model:** PAX L5 Narrow L2 General 27B
+**Project:** EEGLAB | Category: BRAIN_COMPUTER_INTERFACE
+**Upstream:** https://github.com/sccn/eeglab (GPL)
+
+## Overview
+
+This document covers enterprise license and pricing for the Anticloud integration of EEGLAB.
+
+MATLAB EEG analysis toolbox
+
+## Anticloud Integration
+
+PAX L5 Narrow L2 General 27B is integrated into EEGLAB to provide:
+- Local AI inference with zero cloud dependency
+- AIOSS tamper-evident audit chain
+- AES-256 encryption at rest
+- Single-binary deployment
+
+## Contact
+
+Lois-Kleinner Alpasan — CEO & CTO, Anticloud FZ LLE
+lois@0-1.gg | 0-1.gg
