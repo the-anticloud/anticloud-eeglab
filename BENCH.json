@@ -2,13 +2,11 @@
  "schema": "anticloud.tier-bench/1",
  "project": "EEGLAB",
  "source": {
-  "repo_path": "E:\\fenta\\Downloads\\The Anticloud\\ANTICLOUD_REPOS\\BRAIN_COMPUTER_INTERFACE\\EEGLAB\\UPSTREAM_CLONE",
   "git": {
-   "head": "ff419d983568ef492eb8d229af643c0ef0100b32",
-   "url": "https://github.com/neuropsychology/NeuroKit",
-   "branch": "master",
-   "committed_at": "",
-   "sha_verified_from": "GitHub API substitute swap 2026-10-12 | unified 2026-10-14 (API-exists + content/clone anchor)"
+   "url": "https://github.com/sccn/eeglab",
+   "head": "8ac485f654d6bbb1a6acb8dc9ef3f2eaf3d409ba",
+   "sha_verified_from": "revendor 2026-10-15: GitHub API commit lookup",
+   "previous_substitute": "https://github.com/neuropsychology/NeuroKit"
   }
  },
  "metrics": {
