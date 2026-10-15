@@ -1,0 +1,95 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:4306fdea-7920-57b2-84ea-abe42a9690a5",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-10-12T06:09:17Z",
+    "component": {
+      "type": "application",
+      "name": "EEGLAB",
+      "version": "ff419d983568",
+      "bom-ref": "pkg:generic/anticloud/EEGLAB@ff419d983568",
+      "purl": "pkg:generic/anticloud/EEGLAB@ff419d983568",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    "properties": [
+      {
+        "name": "anticloud:source-commit",
+        "value": "ff419d983568ef492eb8d229af643c0ef0100b32"
+      },
+      {
+        "name": "anticloud:source-url",
+        "value": ""
+      },
+      {
+        "name": "anticloud:tier",
+        "value": "tier-agent"
+      }
+    ]
+  },
+  "components": [
+    {
+      "type": "library",
+      "name": "requests",
+      "version": "unspecified",
+      "purl": "pkg:pypi/requests",
+      "bom-ref": "pypi/requests@unspecified"
+    },
+    {
+      "type": "library",
+      "name": "numpy",
+      "version": ">=2.0.0",
+      "purl": "pkg:pypi/numpy@2.0.0",
+      "bom-ref": "pypi/numpy@>=2.0.0"
+    },
+    {
+      "type": "library",
+      "name": "pandas",
+      "version": "<3.0.0",
+      "purl": "pkg:pypi/pandas@3.0.0",
+      "bom-ref": "pypi/pandas@<3.0.0"
+    },
+    {
+      "type": "library",
+      "name": "scipy",
+      "version": "unspecified",
+      "purl": "pkg:pypi/scipy",
+      "bom-ref": "pypi/scipy@unspecified"
+    },
+    {
+      "type": "library",
+      "name": "scikit-learn",
+      "version": ">=1.0.0",
+      "purl": "pkg:pypi/scikit-learn@1.0.0",
+      "bom-ref": "pypi/scikit-learn@>=1.0.0"
+    },
+    {
+      "type": "library",
+      "name": "matplotlib",
+      "version": ">=3.5.0",
+      "purl": "pkg:pypi/matplotlib@3.5.0",
+      "bom-ref": "pypi/matplotlib@>=3.5.0"
+    },
+    {
+      "type": "library",
+      "name": "PyWavelets",
+      "version": ">=1.4.0",
+      "purl": "pkg:pypi/pywavelets@1.4.0",
+      "bom-ref": "pypi/PyWavelets@>=1.4.0"
+    },
+    {
+      "type": "library",
+      "name": "setuptools",
+      "version": "<82.0.0",
+      "purl": "pkg:pypi/setuptools@82.0.0",
+      "bom-ref": "pypi/setuptools@<82.0.0"
+    }
+  ]
+}

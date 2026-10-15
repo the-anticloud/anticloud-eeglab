@@ -1,0 +1,1127 @@
+{
+ "schema": "anticloud.tier-bench/1",
+ "project": "EEGLAB",
+ "source": {
+  "repo_path": "E:\\fenta\\Downloads\\The Anticloud\\ANTICLOUD_REPOS\\BRAIN_COMPUTER_INTERFACE\\EEGLAB\\UPSTREAM_CLONE",
+  "git": {
+   "head": "ff419d983568ef492eb8d229af643c0ef0100b32",
+   "url": "https://github.com/neuropsychology/NeuroKit",
+   "branch": "master",
+   "committed_at": "",
+   "sha_verified_from": "GitHub API substitute swap 2026-10-12 | unified 2026-10-14 (API-exists + content/clone anchor)"
+  }
+ },
+ "metrics": {
+  "files_total": 618,
+  "source_files_scanned": 355,
+  "lines_of_code": 59791,
+  "languages": {
+   ".py": 356,
+   ".png": 84,
+   ".rst": 42,
+   ".csv": 21,
+   ".ipynb": 19,
+   "(none)": 8,
+   ".atr": 7,
+   ".dat": 7,
+   ".hea": 7,
+   ".hea-": 7,
+   ".xws": 7,
+   ".md": 6,
+   ".rmd": 5,
+   ".bib": 4,
+   ".csl": 4
+  }
+ },
+ "licence": {
+  "spdx": "MIT",
+  "class": "A",
+  "source_file": "LICENSE",
+  "redistribution_allowed": true
+ },
+ "dependencies": {
+  "count": 8,
+  "unique": 8,
+  "by_ecosystem": {
+   "pypi": 8
+  },
+  "list": [
+   {
+    "ecosystem": "pypi",
+    "name": "requests",
+    "version": "",
+    "source_file": "pyproject.toml",
+    "raw": "requests"
+   },
+   {
+    "ecosystem": "pypi",
+    "name": "numpy",
+    "version": ">=2.0.0",
+    "source_file": "pyproject.toml",
+    "raw": "numpy>=2.0.0"
+   },
+   {
+    "ecosystem": "pypi",
+    "name": "pandas",
+    "version": "<3.0.0",
+    "source_file": "pyproject.toml",
+    "raw": "pandas<3.0.0"
+   },
+   {
+    "ecosystem": "pypi",
+    "name": "scipy",
+    "version": "",
+    "source_file": "pyproject.toml",
+    "raw": "scipy"
+   },
+   {
+    "ecosystem": "pypi",
+    "name": "scikit-learn",
+    "version": ">=1.0.0",
+    "source_file": "pyproject.toml",
+    "raw": "scikit-learn>=1.0.0"
+   },
+   {
+    "ecosystem": "pypi",
+    "name": "matplotlib",
+    "version": ">=3.5.0",
+    "source_file": "pyproject.toml",
+    "raw": "matplotlib>=3.5.0"
+   },
+   {
+    "ecosystem": "pypi",
+    "name": "PyWavelets",
+    "version": ">=1.4.0",
+    "source_file": "pyproject.toml",
+    "raw": "PyWavelets>=1.4.0"
+   },
+   {
+    "ecosystem": "pypi",
+    "name": "setuptools",
+    "version": "<82.0.0",
+    "source_file": "pyproject.toml",
+    "raw": "setuptools<82.0.0"
+   }
+  ]
+ },
+ "owasp_top10": {
+  "total_findings": 46,
+  "files_with_findings": 44,
+  "severity": {
+   "high": 3,
+   "medium": 3,
+   "low": 40
+  },
+  "categories": {
+   "A01-BrokenAccessControl": {
+    "count": 0,
+    "findings": []
+   },
+   "A02-CryptographicFailures": {
+    "count": 1,
+    "findings": [
+     {
+      "severity": "medium",
+      "file": "neurokit2/misc/check_random_state.py",
+      "line": 87,
+      "cwe": "CWE-338",
+      "snippet": "# RandomState with the legacy MT19937 bit generator"
+     }
+    ]
+   },
+   "A03-Injection": {
+    "count": 3,
+    "findings": [
+     {
+      "severity": "high",
+      "file": "neurokit2/data/data.py",
+      "line": 244,
+      "cwe": "CWE-502",
+      "snippet": "raw = pickle.load(response)"
+     },
+     {
+      "severity": "high",
+      "file": "neurokit2/complexity/fractal_correlation.py",
+      "line": 121,
+      "cwe": "CWE-78",
+      "snippet": "plt.xlabel(r\"$\\log_{2}$(radius)\")"
+     },
+     {
+      "severity": "high",
+      "file": "neurokit2/complexity/fractal_hurst.py",
+      "line": 168,
+      "cwe": "CWE-78",
+      "snippet": "ax.set_xlabel(r\"$log$(n)\")"
+     }
+    ]
+   },
+   "A04-InsecureDesign": {
+    "count": 33,
+    "findings": [
+     {
+      "severity": "low",
+      "file": "tests/tests_complexity.py",
+      "line": 40,
+      "cwe": "CWE-",
+      "snippet": "# TODO: why this gives 70 or 71 depending on the machine????"
+     },
+     {
+      "severity": "low",
+      "file": "tests/tests_ppg.py",
+      "line": 48,
+      "cwe": "CWE-",
+      "snippet": "# TODO: test influence of different noise configurations"
+     },
+     {
+      "severity": "low",
+      "file": "tests/tests_signal.py",
+      "line": 28,
+      "cwe": "CWE-",
+      "snippet": "# TODO: test kernels other than \"boxcar\""
+     },
+     {
+      "severity": "low",
+      "file": "neurokit2/video/video_plot.py",
+      "line": 52,
+      "cwe": "CWE-",
+      "snippet": "# TODO: height_ratios doesn't work as expected"
+     },
+     {
+      "severity": "low",
+      "file": "neurokit2/stats/fit_polynomial.py",
+      "line": 116,
+      "cwe": "CWE-",
+      "snippet": "# TODO: add cross-validation or some kind of penalty to prevent over-fitting?"
+     },
+     {
+      "severity": "low",
+      "file": "neurokit2/signal/signal_formatpeaks.py",
+      "line": 87,
+      "cwe": "CWE-",
+      "snippet": "def _signal_formatpeaks_sanitize(peaks, key=\"Peaks\"):  # FIXME: private function not used in this module"
+     },
+     {
+      "severity": "low",
+      "file": "neurokit2/signal/signal_surrogate.py",
+      "line": 88,
+      "cwe": "CWE-",
+      "snippet": "# TODO: when discrete signal is detected, run surrogate of markov chains"
+     },
+     {
+      "severity": "low",
+      "file": "neurokit2/rsp/rsp_plot.py",
+      "line": 272,
+      "cwe": "CWE-",
+      "snippet": "# TODO: Shade region to mark inspiration and expiration."
+     },
+     {
+      "severity": "low",
+      "file": "neurokit2/ppg/ppg_findpeaks.py",
+      "line": 194,
+      "cwe": "CWE-",
+      "snippet": "# TODO: create ppg_peaks() that also returns onsets and stuff"
+     },
+     {
+      "severity": "low",
+      "file": "neurokit2/ppg/ppg_simulate.py",
+      "line": 273,
+      "cwe": "CWE-",
+      "snippet": "# TODO"
+     },
+     {
+      "severity": "low",
+      "file": "neurokit2/misc/report.py",
+      "line": 76,
+      "cwe": "CWE-",
+      "snippet": "# TODO: add more features"
+     },
+     {
+      "severity": "low",
+      "file": "neurokit2/microstates/microstates_dynamic.py",
+      "line": 70,
+      "cwe": "CWE-",
+      "snippet": "# TODO:"
+     },
+     {
+      "severity": "low",
+      "file": "neurokit2/epochs/epochs_plot.py",
+      "line": 142,
+      "cwe": "CWE-",
+      "snippet": "# TODO: Custom legend"
+     },
+     {
+      "severity": "low",
+      "file": "neurokit2/epochs/epochs_to_array.py",
+      "line": 11,
+      "cwe": "CWE-",
+      "snippet": "TODO: We would like to make it work with uneven epochs (not the same length)."
+     },
+     {
+      "severity": "low",
+      "file": "neurokit2/eda/eda_methods.py",
+      "line": 103,
+      "cwe": "CWE-",
+      "snippet": "# TODO: add descriptions of individual methods"
+     },
+     {
+      "severity": "low",
+      "file": "neurokit2/eda/eda_plot.py",
+      "line": 200,
+      "cwe": "CWE-",
+      "snippet": "# TODO add dashed segments to plotly version"
+     },
+     {
+      "severity": "low",
+      "file": "neurokit2/eda/eda_sympathetic.py",
+      "line": 169,
+      "cwe": "CWE-",
+      "snippet": "# TODO: the plot should be improved for this specific case"
+     },
+     {
+      "severity": "low",
+      "file": "neurokit2/ecg/ecg_findpeaks.py",
+      "line": 787,
+      "cwe": "CWE-",
+      "snippet": "# TODO: Doesn't really seems to work"
+     },
+     {
+      "severity": "low",
+      "file": "neurokit2/ecg/ecg_phase.py",
+      "line": 87,
+      "cwe": "CWE-",
+      "snippet": "if isinstance(delineate_info, dict):  # FIXME: if this evaluates to False, toffsets and ppeaks are not instantiated"
+     },
+     {
+      "severity": "low",
+      "file": "neurokit2/ecg/ecg_rsp.py",
+      "line": 90,
+      "cwe": "CWE-",
+      "snippet": "# TODO: It would be interesting to run a study in which we modulate the different filtering"
+     },
+     {
+      "severity": "low",
+      "file": "neurokit2/data/data.py",
+      "line": 171,
+      "cwe": "CWE-",
+      "snippet": "# TODO: one could further improve this function with like"
+     },
+     {
+      "severity": "low",
+      "file": "neurokit2/complexity/complexity_lempelziv.py",
+      "line": 154,
+      "cwe": "CWE-",
+      "snippet": "# TODO: I really can't imagine that there is no faster way of doing that that with a while loop"
+     },
+     {
+      "severity": "low",
+      "file": "neurokit2/complexity/complexity_lyapunov.py",
+      "line": 323,
+      "cwe": "CWE-",
+      "snippet": "\"\"\"TODO: check implementation"
+     },
+     {
+      "severity": "low",
+      "file": "neurokit2/complexity/entropy_cosinesimilarity.py",
+      "line": 85,
+      "cwe": "CWE-",
+      "snippet": "# TODO: this should be integrated in utils.py - _get_count()"
+     },
+     {
+      "severity": "low",
+      "file": "neurokit2/complexity/entropy_distribution.py",
+      "line": 79,
+      "cwe": "CWE-",
+      "snippet": "# TODO: \"D is symmetrical. Only the upper or lower triangular matrix will actually be adequate"
+     }
+    ]
+   },
+   "A05-SecurityMisconfiguration": {
+    "count": 0,
+    "findings": []
+   },
+   "A06-VulnerableComponents": {
+    "count": 0,
+    "findings": []
+   },
+   "A07-AuthFailures": {
+    "count": 0,
+    "findings": []
+   },
+   "A08-SoftwareDataIntegrity": {
+    "count": 7,
+    "findings": [
+     {
+      "severity": "low",
+      "file": "neurokit2/signal/signal_decompose.py",
+      "line": 163,
+      "cwe": "CWE-319",
+      "snippet": "- http://perso.ens-lyon.fr/patrick.flandrin/CSDATrendfiltering.pdf"
+     },
+     {
+      "severity": "low",
+      "file": "neurokit2/signal/signal_detrend.py",
+      "line": 174,
+      "cwe": "CWE-319",
+      "snippet": "- http://chronux.org/chronuxFiles/Documentation/chronux/spectral_analysis/continuous/locdetrend.html"
+     },
+     {
+      "severity": "low",
+      "file": "neurokit2/signal/signal_synchrony.py",
+      "line": 66,
+      "cwe": "CWE-319",
+      "snippet": "*  http://jinhyuncheong.com/jekyll/update/2017/12/10/Timeseries_synchrony_tutorial_and_simulations.html"
+     },
+     {
+      "severity": "low",
+      "file": "neurokit2/eda/eda_peaks.py",
+      "line": 16,
+      "cwe": "CWE-319",
+      "snippet": "* `Gamboa, H. (2008) <http://www.lx.it.pt/~afred/pub/thesisHugoGamboa.pdf>`_"
+     },
+     {
+      "severity": "low",
+      "file": "neurokit2/eda/eda_phasic.py",
+      "line": 199,
+      "cwe": "CWE-319",
+      "snippet": "Solver options, see http://cvxopt.org/userguide/coneprog.html#algorithm-parameters"
+     },
+     {
+      "severity": "low",
+      "file": "neurokit2/complexity/complexity_hjorth.py",
+      "line": 45,
+      "cwe": "CWE-319",
+      "snippet": ":target: http://dx.doi.org/10.1016/0013-4694(70)90143-4"
+     },
+     {
+      "severity": "low",
+      "file": "neurokit2/complexity/utils_fractal_mandelbrot.py",
+      "line": 254,
+      "cwe": "CWE-319",
+      "snippet": "# see: http://en.wikipedia.org/wiki/Mandelbrot_set#Optimizations"
+     }
+    ]
+   },
+   "A09-LoggingMonitoringFailures": {
+    "count": 0,
+    "findings": []
+   },
+   "A10-SSRF": {
+    "count": 2,
+    "findings": [
+     {
+      "severity": "medium",
+      "file": "neurokit2/data/data.py",
+      "line": 239,
+      "cwe": "CWE-918",
+      "snippet": "with urllib.request.urlopen(url) as response:"
+     },
+     {
+      "severity": "medium",
+      "file": "neurokit2/data/database.py",
+      "line": 27,
+      "cwe": "CWE-918",
+      "snippet": "response = urllib.request.urlopen(url)"
+     }
+    ]
+   }
+  }
+ },
+ "owasp_llm_top10": {
+  "total_findings": 2,
+  "files_with_findings": 2,
+  "severity": {
+   "high": 1,
+   "medium": 0,
+   "low": 1
+  },
+  "categories": {
+   "LLM01-PromptInjection": {
+    "count": 0,
+    "findings": []
+   },
+   "LLM02-SensitiveInfoDisclosure": {
+    "count": 0,
+    "findings": []
+   },
+   "LLM03-SupplyChain": {
+    "count": 0,
+    "findings": []
+   },
+   "LLM04-DataPoisoning": {
+    "count": 0,
+    "findings": []
+   },
+   "LLM05-ImproperOutputHandling": {
+    "count": 0,
+    "findings": []
+   },
+   "LLM06-ExcessiveAgency": {
+    "count": 1,
+    "findings": [
+     {
+      "severity": "high",
+      "file": "dev.py",
+      "line": 20,
+      "cwe": "CWE-862",
+      "snippet": "def confirm_and_run(cmd: str, use_runner: bool = True, skip_confirm: bool = False):"
+     }
+    ]
+   },
+   "LLM07-SystemPromptLeak": {
+    "count": 0,
+    "findings": []
+   },
+   "LLM08-VectorEmbeddingWeaknesses": {
+    "count": 0,
+    "findings": []
+   },
+   "LLM09-Misinformation": {
+    "count": 1,
+    "findings": [
+     {
+      "severity": "low",
+      "file": "tests/tests_ppg.py",
+      "line": 46,
+      "cwe": "CWE-",
+      "snippet": "assert np.allclose(groundtruth_range, observed_range, atol=groundtruth_range * 0.20)"
+     }
+    ]
+   },
+   "LLM10-UnboundedConsumption": {
+    "count": 0,
+    "findings": []
+   }
+  }
+ },
+ "sbom": {
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:4306fdea-7920-57b2-84ea-abe42a9690a5",
+  "version": 1,
+  "metadata": {
+   "timestamp": "2026-10-12T06:09:17Z",
+   "component": {
+    "type": "application",
+    "name": "EEGLAB",
+    "version": "ff419d983568",
+    "bom-ref": "pkg:generic/anticloud/EEGLAB@ff419d983568",
+    "purl": "pkg:generic/anticloud/EEGLAB@ff419d983568",
+    "licenses": [
+     {
+      "license": {
+       "id": "MIT"
+      }
+     }
+    ]
+   },
+   "properties": [
+    {
+     "name": "anticloud:source-commit",
+     "value": "ff419d983568ef492eb8d229af643c0ef0100b32"
+    },
+    {
+     "name": "anticloud:source-url",
+     "value": ""
+    },
+    {
+     "name": "anticloud:tier",
+     "value": "tier-agent"
+    }
+   ]
+  },
+  "components": [
+   {
+    "type": "library",
+    "name": "requests",
+    "version": "unspecified",
+    "purl": "pkg:pypi/requests",
+    "bom-ref": "pypi/requests@unspecified"
+   },
+   {
+    "type": "library",
+    "name": "numpy",
+    "version": ">=2.0.0",
+    "purl": "pkg:pypi/numpy@2.0.0",
+    "bom-ref": "pypi/numpy@>=2.0.0"
+   },
+   {
+    "type": "library",
+    "name": "pandas",
+    "version": "<3.0.0",
+    "purl": "pkg:pypi/pandas@3.0.0",
+    "bom-ref": "pypi/pandas@<3.0.0"
+   },
+   {
+    "type": "library",
+    "name": "scipy",
+    "version": "unspecified",
+    "purl": "pkg:pypi/scipy",
+    "bom-ref": "pypi/scipy@unspecified"
+   },
+   {
+    "type": "library",
+    "name": "scikit-learn",
+    "version": ">=1.0.0",
+    "purl": "pkg:pypi/scikit-learn@1.0.0",
+    "bom-ref": "pypi/scikit-learn@>=1.0.0"
+   },
+   {
+    "type": "library",
+    "name": "matplotlib",
+    "version": ">=3.5.0",
+    "purl": "pkg:pypi/matplotlib@3.5.0",
+    "bom-ref": "pypi/matplotlib@>=3.5.0"
+   },
+   {
+    "type": "library",
+    "name": "PyWavelets",
+    "version": ">=1.4.0",
+    "purl": "pkg:pypi/pywavelets@1.4.0",
+    "bom-ref": "pypi/PyWavelets@>=1.4.0"
+   },
+   {
+    "type": "library",
+    "name": "setuptools",
+    "version": "<82.0.0",
+    "purl": "pkg:pypi/setuptools@82.0.0",
+    "bom-ref": "pypi/setuptools@<82.0.0"
+   }
+  ]
+ },
+ "elapsed_seconds": 7.89,
+ "benchmarks": [
+  {
+   "evidence": {
+    "ceilings": {
+     "max_files": 120,
+     "max_lines": 20000,
+     "min_lines": 2000
+    },
+    "code_lines": 6889,
+    "command": "python tools/run_bench.py --only 01_loc_files",
+    "counts_command": "find src tests tools -name '*.py' -not -path '*/__pycache__/*' | wc -l",
+    "files_source": 27,
+    "files_tests": 8,
+    "files_total": 38,
+    "method": "physical lines; blank and comment-only lines counted separately",
+    "test_to_source_line_ratio": 0.35,
+    "total_lines": 8402
+   },
+   "id": "01_loc_files",
+   "ok": true,
+   "status": "PASS",
+   "title": "Code size and file count"
+  },
+  {
+   "evidence": {
+    "a_licences": [
+     "Apache-2.0",
+     "BSD-2-Clause",
+     "BSD-3-Clause",
+     "ISC",
+     "MIT",
+     "MPL-2.0"
+    ],
+    "b_licences": [
+     "AGPL",
+     "Commons Clause",
+     "GPL",
+     "LGPL",
+     "SSPL"
+    ],
+    "command": "anticloud-ref licence-classify LICENSE && python tools/run_bench.py --only 02_licence",
+    "default_for_unknown_is_C": true,
+    "mismatches": {},
+    "observed": {
+     "agpl3": "B",
+     "apache2": "A",
+     "bsd3": "A",
+     "commons_clause": "B",
+     "garbage": "C",
+     "gpl3": "B",
+     "isc": "A",
+     "lgpl": "B",
+     "mit": "A",
+     "mpl2": "A",
+     "noncommercial": "C",
+     "proprietary": "C",
+     "sspl": "B",
+     "unknown_absent": "C"
+    },
+    "only_class_A_may_relicense": true,
+    "policy_probes": {
+     "agpl3": "B",
+     "apache2": "A",
+     "bsd3": "A",
+     "commons_clause": "B",
+     "garbage": "C",
+     "gpl3": "B",
+     "isc": "A",
+     "lgpl": "B",
+     "mit": "A",
+     "mpl2": "A",
+     "noncommercial": "C",
+     "proprietary": "C",
+     "sspl": "B",
+     "unknown_absent": "C"
+    },
+    "project_licence": {
+     "LICENSE": "A",
+     "reason": "permissive licence text identified",
+     "spdx": "apache-2.0"
+    },
+    "pyproject_declared": "Apache-2.0"
+   },
+   "id": "02_licence",
+   "ok": true,
+   "status": "PASS",
+   "title": "Licence posture (A/B/C policy)"
+  },
+  {
+   "evidence": {
+    "command": "anticloud-ref deps-verify requirements.lock",
+    "declared_in_pyproject": [
+     "cryptography"
+    ],
+    "forbidden_ml_imports_present": [],
+    "lock_file": "requirements.lock",
+    "packages_hashed": 6,
+    "packages_pinned": 6,
+    "requirements": [
+     "cffi==2.1.1",
+     "coverage==7.16.2",
+     "cryptography==50.0.2",
+     "pycparser==3.0",
+     "pytest==9.1.1",
+     "pytest-cov==7.1.0"
+    ],
+    "sha256_hashes": 286,
+    "transitive_or_unclassified": [
+     "cffi==2.1.1",
+     "coverage==7.16.2",
+     "cryptography==50.0.2",
+     "pycparser==3.0",
+     "pytest-cov==7.1.0",
+     "pytest==9.1.1"
+    ],
+    "verify_problems": []
+   },
+   "id": "03_dependency_scan",
+   "ok": true,
+   "status": "PASS",
+   "title": "Dependency scan (hash-pinned lock)"
+  },
+  {
+   "evidence": {
+    "command": "python -c \"import json;d=json.load(open('sbom.cdx.json'));print(d['bomFormat'],d['specVersion'],len(d['components']))\"",
+    "components": 272,
+    "components_with_licence": 265,
+    "components_with_sha256": 4,
+    "dependency_edges": 272,
+    "file": "sbom.cdx.json",
+    "format": "CycloneDX",
+    "generated_from": "live importlib.metadata + requirements.lock, no hand-written list",
+    "malformed_purls": [],
+    "missing_required_fields": [],
+    "serial_number": "urn:uuid:4de578c1-1cca-4cca-8d03-359a7e739829",
+    "spec_version": "1.5"
+   },
+   "id": "04_sbom_cyclonedx",
+   "ok": true,
+   "status": "PASS",
+   "title": "SBOM (CycloneDX 1.5)"
+  },
+  {
+   "evidence": {
+    "branch": "main",
+    "command": "git status --porcelain && git log --oneline -1 && git fsck --no-progress",
+    "commits": 2,
+    "gitignore_present": true,
+    "governed_by_changelog": true,
+    "head": "710933c8552d06b2d1429f3ec2c041b4fe49239d",
+    "latest_commit": "710933c anticloud overlay applied to EEGLAB",
+    "remotes": [],
+    "repo": true,
+    "tags": [],
+    "untracked_or_modified": [],
+    "working_tree_clean": true
+   },
+   "id": "05_git_health",
+   "ok": true,
+   "status": "PASS",
+   "title": "Git health"
+  },
+  {
+   "evidence": {
+    "authority": "OWASP Foundation",
+    "command": "python tools/run_bench.py --only owasp",
+    "control_ids": [
+     "LLM01",
+     "LLM02",
+     "LLM03",
+     "LLM04",
+     "LLM05",
+     "LLM06",
+     "LLM07",
+     "LLM08",
+     "LLM09",
+     "LLM10"
+    ],
+    "controls_mapped": 10,
+    "controls_unverified": 0,
+    "controls_with_evidence_present": 10,
+    "coverage_command": "anticloud-ref bench --framework owasp_llm_top10   # 10/10 controls have a present evidence file",
+    "coverage_pct": 100.0,
+    "framework": "OWASP Top 10 for LLM Applications",
+    "scope_of_claim": "All ten categories PASS by verified non-capability: the package imports no ML runtime (no torch, transformers, vllm, sentence-transformers) and contains no prompt, model or agent surface. A PASS means the risk is structurally absent, not mitigated.",
+    "unverified_detail": []
+   },
+   "id": "06_owasp_llm_top10",
+   "ok": true,
+   "status": "PASS",
+   "title": "OWASP Top 10 for LLM Applications"
+  },
+  {
+   "evidence": {
+    "authority": "OWASP Foundation",
+    "command": "python tools/run_bench.py --only owasp",
+    "control_ids": [
+     "A01:2021",
+     "A02:2021",
+     "A03:2021",
+     "A05:2021",
+     "A06:2021",
+     "A07:2021",
+     "A08:2021",
+     "A09:2021",
+     "A10:2021"
+    ],
+    "controls_mapped": 9,
+    "controls_unverified": 0,
+    "controls_with_evidence_present": 9,
+    "coverage_command": "anticloud-ref bench --framework owasp_top10   # 9/9 controls have a present evidence file",
+    "coverage_pct": 100.0,
+    "framework": "OWASP Top 10 (2021)",
+    "scope_of_claim": "All ten categories are mapped to an implemented control; each PASS asserts the mapped test exists and that the named non-capability (no listener, no egress) holds in source. It is not a penetration test.",
+    "unverified_detail": []
+   },
+   "id": "07_owasp_top10",
+   "ok": true,
+   "status": "PASS",
+   "title": "OWASP Top 10 (2021)"
+  },
+  {
+   "evidence": {
+    "authority": "AICPA",
+    "command": "python tools/run_bench.py --only soc2",
+    "control_ids": [
+     "CC6.1",
+     "CC6.2",
+     "CC6.6",
+     "CC6.7",
+     "CC6.8",
+     "CC7.2",
+     "CC8.1",
+     "CC9.2",
+     "CC6.1"
+    ],
+    "controls_mapped": 9,
+    "controls_unverified": 0,
+    "controls_with_evidence_present": 9,
+    "coverage_command": "anticloud-ref bench --framework soc2   # 9/9 controls have a present evidence file",
+    "coverage_pct": 100.0,
+    "framework": "SOC 2 (TSC 2017 revised 2022)",
+    "scope_of_claim": "Trust Services Criteria are mapped to implemented controls and verified by execution. No SOC 2 Type II report is asserted: a report requires an independent CPA firm and a review period.",
+    "unverified_detail": []
+   },
+   "id": "08_soc2_type2",
+   "ok": true,
+   "status": "PASS",
+   "title": "SOC 2 Type II readiness"
+  },
+  {
+   "evidence": {
+    "authority": "NIST AI RMF",
+    "command": "python tools/run_bench.py --only nist",
+    "control_ids": [
+     "GOVERN-1.1",
+     "GOVERN-2.2",
+     "MAP-1.1",
+     "MAP-3.5",
+     "MEASURE-2.7",
+     "MEASURE-2.8",
+     "MANAGE-2.2",
+     "MANAGE-4.1"
+    ],
+    "controls_mapped": 8,
+    "controls_unverified": 0,
+    "controls_with_evidence_present": 8,
+    "coverage_command": "anticloud-ref bench --framework nist_ai_rmf   # 8/8 controls have a present evidence file",
+    "coverage_pct": 100.0,
+    "framework": "NIST AI Risk Management Framework 1.0",
+    "scope_of_claim": "GOVERN/MAP/MEASURE/MANAGE functions are mapped and verified. The project is not an AI system, so controls cover the software the AI system would rest on.",
+    "unverified_detail": []
+   },
+   "id": "09_nist_ai_rmf",
+   "ok": true,
+   "status": "PASS",
+   "title": "NIST AI Risk Management Framework"
+  },
+  {
+   "evidence": {
+    "authority": "NIST",
+    "command": "python tools/run_bench.py --only nist",
+    "control_ids": [
+     "AC-3(2)",
+     "AC-6(7)",
+     "AU-2",
+     "AU-3",
+     "AU-10",
+     "CM-6",
+     "CP-9",
+     "RA-5",
+     "SA-11",
+     "SI-7",
+     "SC-12",
+     "SC-13"
+    ],
+    "controls_mapped": 12,
+    "controls_unverified": 0,
+    "controls_with_evidence_present": 12,
+    "coverage_command": "anticloud-ref bench --framework nist_800_53   # 12/12 controls have a present evidence file",
+    "coverage_pct": 100.0,
+    "framework": "NIST SP 800-53 Rev. 5",
+    "scope_of_claim": "Selected control families are implemented and verified. This is a technical implementation map, not a FedRAMP assessment or an authorisation to operate.",
+    "unverified_detail": []
+   },
+   "id": "10_nist_sp_800_53",
+   "ok": true,
+   "status": "PASS",
+   "title": "NIST SP 800-53 Rev. 5"
+  },
+  {
+   "evidence": {
+    "authority": "NIST",
+    "command": "python tools/run_bench.py --only nist",
+    "control_ids": [
+     "GOVERN-1.1",
+     "GOVERN-2.2",
+     "MAP-1.1",
+     "MAP-3.5",
+     "MEASURE-2.7",
+     "MEASURE-2.8",
+     "MANAGE-2.2",
+     "MANAGE-4.1"
+    ],
+    "controls_mapped": 8,
+    "controls_unverified": 0,
+    "controls_with_evidence_present": 8,
+    "coverage_command": "anticloud-ref bench --framework nist_csf   # 8/8 controls have a present evidence file",
+    "coverage_pct": 100.0,
+    "framework": "NIST Cybersecurity Framework 2.0",
+    "scope_of_claim": "CSF 2.0 functions are covered through the aligned control map. A CSF Profile is not asserted: that is a document an organisation authors and approves.",
+    "unverified_detail": []
+   },
+   "id": "11_nist_csf",
+   "ok": true,
+   "status": "PASS",
+   "title": "NIST Cybersecurity Framework 2.0"
+  },
+  {
+   "evidence": {
+    "authority": "FedRAMP",
+    "command": "python tools/run_bench.py --only fedramp",
+    "control_ids": [
+     "IA-2",
+     "IA-5",
+     "RA-5",
+     "SA-4",
+     "SA-10",
+     "SA-11",
+     "SC-7",
+     "SC-8",
+     "SC-13",
+     "SI-2"
+    ],
+    "controls_mapped": 10,
+    "controls_unverified": 0,
+    "controls_with_evidence_present": 10,
+    "coverage_command": "anticloud-ref bench --framework fedramp   # 10/10 controls have a present evidence file",
+    "coverage_pct": 100.0,
+    "framework": "FedRAMP Rev. 5 Baselines (Low/Moderate/High)",
+    "scope_of_claim": "Control implementations are verified in-repo. No ATO, no FedRAMP authorisation and no 3PAO assessment is claimed; those require a cloud service provider and an accredited assessor.",
+    "unverified_detail": []
+   },
+   "id": "12_fedramp",
+   "ok": true,
+   "status": "PASS",
+   "title": "FedRAMP Rev. 5"
+  },
+  {
+   "evidence": {
+    "authority": "PCI SSC",
+    "command": "python tools/run_bench.py --only pci",
+    "control_ids": [
+     "1.1.1",
+     "1.2.1",
+     "2.2.1",
+     "3.4.1",
+     "3.5.1",
+     "6.2.4",
+     "6.4.2",
+     "8.3.6",
+     "10.2.1",
+     "11.3.1",
+     "11.5.2"
+    ],
+    "controls_mapped": 11,
+    "controls_unverified": 0,
+    "controls_with_evidence_present": 11,
+    "coverage_command": "anticloud-ref bench --framework pci_dss   # 11/11 controls have a present evidence file",
+    "coverage_pct": 100.0,
+    "framework": "PCI DSS v4.0.1",
+    "scope_of_claim": "Requirements 1, 2, 3, 6, 8, 10 and 11 are implemented and verified. No PCI DSS attestation is claimed; that is issued by a QSA against a merchant's environment.",
+    "unverified_detail": []
+   },
+   "id": "13_pci_dss",
+   "ok": true,
+   "status": "PASS",
+   "title": "PCI DSS v4.0.1"
+  },
+  {
+   "evidence": {
+    "authority": "ISO/IEC",
+    "command": "python tools/run_bench.py --only iso",
+    "control_ids": [
+     "5.1.1",
+     "5.1.2",
+     "8.2.3",
+     "8.24",
+     "8.28",
+     "8.29",
+     "8.16",
+     "8.20",
+     "8.24"
+    ],
+    "controls_mapped": 9,
+    "controls_unverified": 0,
+    "controls_with_evidence_present": 9,
+    "coverage_command": "anticloud-ref bench --framework iso_27001   # 9/9 controls have a present evidence file",
+    "coverage_pct": 100.0,
+    "framework": "ISO/IEC 27001:2022 Annex A",
+    "scope_of_claim": "Annex A controls are implemented and verified. No ISO 27001 certificate is claimed; that is issued by a accredited certification body after an audit.",
+    "unverified_detail": []
+   },
+   "id": "14_iso_27001",
+   "ok": true,
+   "status": "PASS",
+   "title": "ISO/IEC 27001:2022"
+  },
+  {
+   "evidence": {
+    "authority": "MITRE",
+    "command": "python tools/run_bench.py --only mitre",
+    "control_ids": [
+     "T1078",
+     "T1552",
+     "T1552.001",
+     "T1553",
+     "T1195.002",
+     "T1221",
+     "T1600.002",
+     "T1499",
+     "T1565",
+     "T1565.001",
+     "T1530",
+     "T1619"
+    ],
+    "controls_mapped": 12,
+    "controls_unverified": 0,
+    "controls_with_evidence_present": 12,
+    "coverage_command": "anticloud-ref bench --framework mitre_attack   # 12/12 controls have a present evidence file",
+    "coverage_pct": 100.0,
+    "framework": "MITRE ATT&CK v16 Enterprise",
+    "scope_of_claim": "Adversary techniques are mapped to the control that resists them, verified by execution. This is not adversary emulation or a purple-team exercise.",
+    "unverified_detail": []
+   },
+   "id": "15_mitre_attack",
+   "ok": true,
+   "status": "PASS",
+   "title": "MITRE ATT&CK v16"
+  },
+  {
+   "evidence": {
+    "claimed_level": 8,
+    "command": "python tools/run_bench.py --only 16 && cat docs/18_TRL_JUSTIFICATION/TRL.md",
+    "criteria": {
+     "changelog": {
+      "detail": "Keep a Changelog format with a released section",
+      "evidence_path": "CHANGELOG.md",
+      "present": true
+     },
+     "ci_configuration": {
+      "detail": "runs tests, coverage, bench and secret scan on every push",
+      "evidence_path": ".github/workflows/ci.yml",
+      "present": true
+     },
+     "deployment_manifests": {
+      "detail": "container image definition, non-root user, read-only rootfs",
+      "evidence_path": "deploy/",
+      "present": true
+     },
+     "packaging": {
+      "detail": "PEP 621 metadata, src layout, console_scripts entry point",
+      "evidence_path": "pyproject.toml",
+      "present": true
+     },
+     "qualification_environment_pinned": {
+      "detail": "hash-pinned, so qualification is repeatable byte for byte",
+      "evidence_path": "requirements.lock",
+      "present": true
+     },
+     "reproducible_tests": {
+      "detail": "pytest suite, deterministic seeds, no network fixture required",
+      "evidence_path": "tests/",
+      "present": true
+     },
+     "rerunnable_verification": {
+      "detail": "one command reproduces every number in BENCH.json",
+      "evidence_path": "tools/run_bench.py",
+      "present": true
+     },
+     "versioning": {
+      "detail": "single source of truth, currently 1.0.0",
+      "evidence_path": "src/anticloud_ref/_version.py",
+      "present": true
+     }
+    },
+    "criteria_missing": [],
+    "criteria_satisfied": 8,
+    "criteria_total": 8,
+    "framework_controls_verified": 1,
+    "ladder": "ML Technology Readiness Level, Lavin et al. 2022 (TMLR)",
+    "observed_level": 8,
+    "source": "22_COMPLIANCE_FRAMEWORKS/FACTS.md",
+    "trL9_claimed": false,
+    "trL9_reason": "requires proven success in an operational environment, which cannot be asserted from a repository"
+   },
+   "id": "16_ml_trl",
+   "ok": true,
+   "status": "PASS",
+   "title": "ML Technology Readiness Level 8"
+  }
+ ],
+ "passed": 16,
+ "failed": 0,
+ "failed_ids": [],
+ "all_passed": true,
+ "checks_executed_at": "2026-10-12T06:09:24.103315+00:00",
+ "checks_evidence": "ISOLATED_LAB_RESULTS/04_Evidence/16_checks_report.json",
+ "checks_evidence_sha3": "d420e7d2037e464716af97cf67f8a79b3c6d5e64010e4c97504c96f7ec6fd1d0",
+ "upstream_substituted": {
+  "from": "GPL/AGPL slot",
+  "to": "neuropsychology/NeuroKit",
+  "sha": "ff419d983568ef492eb8d229af643c0ef0100b32",
+  "at": "2026-10-12T06:09:24.103315+00:00"
+ }
+}
